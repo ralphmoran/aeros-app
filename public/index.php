@@ -9,6 +9,6 @@
 |
 */
 
-require_once __DIR__ . '/../vendor/ralphmoran/aeros/src/aeros_autoload.php';
+require_once __DIR__ . '/../vendor/aeros/framework/src/aeros_autoload.php';
 
 app()->run();
