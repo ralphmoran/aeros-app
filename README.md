@@ -1,10 +1,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/ralphmoran/aeros.svg)](https://github.com/ralphmoran/aeros/releases)
-[![GitHub tag](https://img.shields.io/github/tag/ralphmoran/aeros.svg)](https://github.com/ralphmoran/aeros/tags)
-[![GitHub downloads](https://img.shields.io/github/downloads/ralphmoran/aeros/total.svg)](https://github.com/ralphmoran/aeros/releases)
-[![GitHub language count](https://img.shields.io/github/languages/count/ralphmoran/aeros.svg)](https://github.com/ralphmoran/aeros)
-[![GitHub stars](https://img.shields.io/github/stars/ralphmoran/aeros.svg?style=social)](https://github.com/ralphmoran/aeros/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/ralphmoran/aeros.svg?style=social)](https://github.com/ralphmoran/aeros/network/members)
+[![GitHub release](https://img.shields.io/github/release/ralphmoran/aeros-app.svg)](https://github.com/ralphmoran/aeros-app/releases)
+[![GitHub tag](https://img.shields.io/github/tag/ralphmoran/aeros-app.svg)](https://github.com/ralphmoran/aeros-app/tags)
+[![GitHub downloads](https://img.shields.io/github/downloads/ralphmoran/aeros-app/total.svg)](https://github.com/ralphmoran/aeros-app/releases)
+[![GitHub language count](https://img.shields.io/github/languages/count/ralphmoran/aeros-app.svg)](https://github.com/ralphmoran/aeros-app)
+[![GitHub stars](https://img.shields.io/github/stars/ralphmoran/aeros-app.svg?style=social)](https://github.com/ralphmoran/aeros-app/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ralphmoran/aeros-app.svg?style=social)](https://github.com/ralphmoran/aeros-app/network/members)
 
 # Aeros Blueprint for Aeros framework
 
