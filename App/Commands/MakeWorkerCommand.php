@@ -62,7 +62,7 @@ class MakeWorkerCommand extends Command
             // Create worker class
             app()->file->createFromTemplate(
                 $workerClass = env('WORKERS_DIR') . '/' . $name . 'Worker.php', 
-                app()->basedir . '/../src/resources/templates/worker.template', 
+                app()->basedir . '/../vendor/aeros/framework/src/resources/templates/worker.template', 
                 ['classname' => $name]
             );
 
@@ -70,7 +70,7 @@ class MakeWorkerCommand extends Command
             if ($input->getOption('script') || $input->getOption('all')) {
                 app()->file->createFromTemplate(
                     $workerScript = env('SCRIPTS_DIR') . '/' . $hyphenatedWorkerName . '-worker-script.php', 
-                    app()->basedir . '/../src/resources/templates/script.template', 
+                    app()->basedir . '/../vendor/aeros/framework/src/resources/templates/script.template', 
                     [
                         'worker-name' => $hyphenatedWorkerName,
                         'classname' => $name
@@ -84,7 +84,7 @@ class MakeWorkerCommand extends Command
 
                 app()->file->createFromTemplate(
                     $workerConf = env('WORKERS_CONF_DIR') . '/' . $hyphenatedWorkerName . '-worker-script.conf', 
-                    app()->basedir . '/../src/resources/templates/conf.template', 
+                    app()->basedir . '/../vendor/aeros/framework/src/resources/templates/conf.template', 
                     [
                         'script-name' => $hyphenatedWorkerName . '-worker-script',
                         'process-num' => $processes,

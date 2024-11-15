@@ -44,7 +44,7 @@ class MakeControllerCommand extends Command
 
         app()->file->createFromTemplate(
             app()->basedir . '/controllers/' . $classname . 'Controller.php', 
-            app()->basedir . '/../src/resources/templates/controller.template', 
+            app()->basedir . '/../vendor/aeros/framework/src/resources/templates/controller.template', 
             [
                 'classname' => $classname
             ]

@@ -59,7 +59,7 @@ class MakeCommand extends Command
 
         app()->file->createFromTemplate(
             app()->basedir . '/commands/' . $classname . 'Command.php', 
-            app()->basedir . '/../src/resources/templates/command.template', 
+            app()->basedir . '/../vendor/aeros/framework/src/resources/templates/command.template', 
             [
                 'classname' => $classname,
                 'name' => strtolower($command)

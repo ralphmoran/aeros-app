@@ -56,7 +56,7 @@ class MakeModelCommand extends Command
 
             app()->file->createFromTemplate(
                 app()->basedir . '/Models/' . $classname . '.php', 
-                app()->basedir . '/../Src/resources/templates/model.template', 
+                app()->basedir . '/../vendor/aeros/framework/src/resources/templates/model.template', 
                 [
                     'classname' => $classname
                 ]

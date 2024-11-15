@@ -47,7 +47,7 @@ class MakeMiddlewareCommand extends Command
 
         app()->file->createFromTemplate(
             app()->basedir . '/middlewares/' . $classname . 'Middleware.php', 
-            app()->basedir . '/../src/resources/templates/middleware.template', 
+            app()->basedir . '/../vendor/aeros/framework/src/resources/templates/middleware.template', 
             [
                 'classname' => $classname
             ]

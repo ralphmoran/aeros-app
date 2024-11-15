@@ -121,7 +121,7 @@ class RunDatabaseCommand extends Command
      *
      * @return void
      */
-    private function verifyDBConnection(string $database = 'aeros_default', string $env = 'development', OutputInterface $output) 
+    private function verifyDBConnection(string $database = 'aeros_db', string $env = 'development', OutputInterface $output) 
     {
         // Testing DB connection
         $defaultDBSetup = config('db.connections')[implode(config('db.default'))];
@@ -145,7 +145,7 @@ class RunDatabaseCommand extends Command
         if (! file_exists(app()->basedir . '/../phinx.json')) {
             app()->file->createFromTemplate(
                 app()->basedir . '/../phinx.json',
-                app()->basedir . '/../src/resources/templates/phinx.template',
+                app()->basedir . '/../vendor/aeros/framework/src/resources/templates/phinx.template',
                 $defaultDBSetup
             );
         }
