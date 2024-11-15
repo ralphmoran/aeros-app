@@ -6,7 +6,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/ralphmoran/aeros.svg?style=social)](https://github.com/ralphmoran/aeros/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/ralphmoran/aeros.svg?style=social)](https://github.com/ralphmoran/aeros/network/members)
 
-# Aeros - The Lighter MVC framework
+# Aeros Blueprint for Aeros framework
 
 Working on it
 
@@ -14,6 +14,8 @@ Working on it
 
 - Run `vagrant up`. If required, authorize NFS configuration
 - Add .env file and update database section
+- SSH to VM: `vagrant ssh`
+- CD into `cd /var/www/html` then
 - Run `composer install`
 - Run `composer cc && composer dump -o`
 - Run next command from within working directory `php aeros run:app`
