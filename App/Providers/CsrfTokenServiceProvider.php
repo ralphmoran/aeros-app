@@ -10,8 +10,7 @@ class CsrfTokenServiceProvider extends ServiceProvider
     public function register(): void
     {
         if (! isset(session()->csrf_token)) {
-            // session()->csrf_token = bin2hex(random_bytes(32));
-            session()->csrf_token = Uuid::uuid4();
+            session()->csrf_token = Uuid::uuid4()->toString();
         }
     }
 
