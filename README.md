@@ -6,6 +6,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/ralphmoran/aeros-app.svg?style=social)](https://github.com/ralphmoran/aeros-app/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/ralphmoran/aeros-app.svg?style=social)](https://github.com/ralphmoran/aeros-app/network/members)
 
+<img width="1742" alt="Aeros - Screenshot" src="https://github.com/user-attachments/assets/f36f073c-ef26-402c-b715-8e9801c223d9">
+
 # Aeros Blueprint for Aeros framework
 
 Working on it
