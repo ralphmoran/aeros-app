@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y libapache2-mod-php8.0
 
     # PHP Mods
-    sudo apt-get install -y php8.0-{memcached,bcmath,bz2,intl,gd,mbstring,mysql,sqlite3,zip,common,xml,openswoole}
+    sudo apt-get install -y php8.0-{memcached,bcmath,bz2,intl,gd,mbstring,mysql,sqlite3,zip,common,xml}
     sudo apt-get install wget
     sudo apt-get install php8.0-curl
     
@@ -70,6 +70,7 @@ Vagrant.configure("2") do |config|
     # Install OpenSwoole
     sudo apt install -y software-properties-common
     sudo add-apt-repository ppa:openswoole/ppa -y
+    sudo apt install -y php8.0-openswoole
 
     #==============================================
     # Install Postgresl
