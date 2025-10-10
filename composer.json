@@ -9,7 +9,7 @@
     },
     "require": {
         "php": "^8.0",
-        "aeros/framework": "^6.2.*"
+        "aeros/framework": "^6.2"
     },
     "require-dev": {},
     "license": "MIT",
