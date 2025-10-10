@@ -28,4 +28,18 @@ return [
     'whitelisted_hosts' => [
         // Add any authorized host here: IP or URL
     ],
+
+    // Request Limits
+    'max_url_length' => 2048,
+    'max_header_count' => 50,
+    'max_cookie_size' => 4096, // bytes
+    'max_payload_size' => 10485760, // 10MB in bytes
+    'max_input_stream_size' => 10485760, // 10MB in bytes
+
+    // CSRF Protection
+    'csrf_protection' => env('CSRF_PROTECTION', true),
+    'csrf_exempt_routes' => [
+        '/api/*',
+        '/webhooks/*',
+    ],
 ];
