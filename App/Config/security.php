@@ -42,4 +42,18 @@ return [
         '/api/*',
         '/webhooks/*',
     ],
+
+    // Rate Limiting
+    'rate_limit' => [
+        'enabled' => env('RATE_LIMIT_ENABLED', true),
+        'max_attempts' => env('RATE_LIMIT_MAX_ATTEMPTS', 60), // requests
+        'decay_minutes' => env('RATE_LIMIT_DECAY_MINUTES', 1), // time window
+    ],
+
+    // Per-route rate limits (override defaults)
+    'rate_limit_routes' => [
+        '/api/*' => ['max_attempts' => 100, 'decay_minutes' => 1],
+        '/login' => ['max_attempts' => 5, 'decay_minutes' => 15],
+        '/register' => ['max_attempts' => 3, 'decay_minutes' => 60],
+    ],
 ];
