@@ -6,7 +6,7 @@ use Aeros\Src\Classes\Controller;
 
 class ApiController extends Controller
 {
-    public function index()
+    public function index(): string
     {
         return __METHOD__;
     }

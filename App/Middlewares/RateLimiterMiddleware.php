@@ -9,7 +9,7 @@ use Aeros\Src\Interfaces\MiddlewareInterface;
 
 class RateLimiterMiddleware implements MiddlewareInterface
 {
-    public function __invoke(Request $request, Response $response)
+    public function __invoke(Request $request, Response $response): void
     {
         // Get configuration
         $maxAttempts = config('security.rate_limit.max_attempts', 60);
@@ -26,7 +26,7 @@ class RateLimiterMiddleware implements MiddlewareInterface
                 // Optional: Log rate limit violation
                 logger(
                     "Rate limit exceeded for key: {$key}",
-                    'security.log'
+                    app()->basedir . '/logs/security.log'
                 );
             });
 

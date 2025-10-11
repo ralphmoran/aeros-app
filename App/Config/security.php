@@ -46,7 +46,7 @@ return [
     // Rate Limiting
     'rate_limit' => [
         'enabled' => env('RATE_LIMIT_ENABLED', true),
-        'max_attempts' => env('RATE_LIMIT_MAX_ATTEMPTS', 60), // requests
+        'max_attempts' => env('RATE_LIMIT_MAX_ATTEMPTS', 500), // requests
         'decay_minutes' => env('RATE_LIMIT_DECAY_MINUTES', 1), // time window
     ],
 

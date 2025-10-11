@@ -4,9 +4,13 @@ namespace App\Controllers;
 
 use App\Models\User;
 use Aeros\Src\Classes\Controller;
+use Aeros\Src\Classes\RateLimiter;
 
 class IndexController extends Controller
 {
+    /**
+     * @throws \Exception
+     */
     public function __construct()
     {
         // Each controller can execute multiple actions upon request.
@@ -24,6 +28,27 @@ class IndexController extends Controller
 
         // Call parent::__construct() method if needed
         // parent::__construct();
+
+//        // Login route
+//        rateLimiter()->throttle(
+//            RateLimiter::keyByIP('login:'),
+//            5,    // only 5 attempts
+//            15    // per 15 minutes
+//        );
+//
+//        // API endpoints
+//        rateLimiter()->throttle(
+//            RateLimiter::keyByUser(User::find(1), 'api:'),
+//            100,  // 100 requests
+//            1     // per minute
+//        );
+//
+//        // Registration
+//        rateLimiter()->throttle(
+//            RateLimiter::keyByIP('register:'),
+//            3,    // only 3 attempts
+//            60    // per hour
+//        );
     }
 
     public function index()

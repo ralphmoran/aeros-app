@@ -57,6 +57,7 @@ return [
         'app' => [
             'BanBotsMiddleware' => \App\Middlewares\BanBotsMiddleware::class,
             'VerifyCsrfTokenMiddleware' => \App\Middlewares\VerifyCsrfTokenMiddleware::class,
+            'RateLimiterMiddleware' => \App\Middlewares\RateLimiterMiddleware::class,
         ],
 
         'web' => [
