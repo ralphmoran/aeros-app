@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Singletons
+        app()->singleton('config', \Aeros\Src\Classes\Config::class);
         app()->singleton('db', \Aeros\Src\Classes\Db::class);
         app()->singleton('queue', \Aeros\Src\Classes\Queue::class);
         app()->singleton('cache', \Aeros\Src\Classes\Cache::class);
@@ -31,11 +32,11 @@ class AppServiceProvider extends ServiceProvider
         app()->singleton('encryptor', \Aeros\Src\Classes\Encryptor::class);
         app()->singleton('session', \Aeros\Src\Classes\Session::class);
         app()->singleton('cookie', \Aeros\Src\Classes\Cookie::class);
-        app()->singleton('config', \Aeros\Src\Classes\Config::class);
         app()->singleton('worker', \App\Queues\Workers\AppWorker::class);
         app()->singleton('scheduler', \GO\Scheduler::class);
         app()->singleton('service', \App\Providers\ServiceAgentServiceProvider::class);
         app()->singleton('debugger', \Aeros\Src\Classes\Debugger::class);
+        app()->singleton('rateLimiter', \Aeros\Src\Classes\RateLimiter::class);
         app()->singleton('rateLimiter', \Aeros\Src\Classes\RateLimiter::class);
 
         // Register objects only for CLI

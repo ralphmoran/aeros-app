@@ -12,10 +12,10 @@
 
 return [
     // Enable SSRF protection (recommended for production)
-    'ssrf_protection' => env('SSRF_PROTECTION', true),
+    'ssrf_protection' => env('SSRF_PROTECTION'),
 
     // Block private IPs (set false for Docker/internal networks)
-    'block_private_ips' => env('BLOCK_PRIVATE_IPS', false),
+    'block_private_ips' => env('BLOCK_PRIVATE_IPS'),
 
     // Always blocked hosts (metadata endpoints)
     'blocked_hosts' => [
@@ -37,7 +37,7 @@ return [
     'max_input_stream_size' => 10485760, // 10MB in bytes
 
     // CSRF Protection
-    'csrf_protection' => env('CSRF_PROTECTION', true),
+    'csrf_protection' => env('CSRF_PROTECTION'),
     'csrf_exempt_routes' => [
         '/api/*',
         '/webhooks/*',
@@ -45,9 +45,9 @@ return [
 
     // Rate Limiting
     'rate_limit' => [
-        'enabled' => env('RATE_LIMIT_ENABLED', true),
-        'max_attempts' => env('RATE_LIMIT_MAX_ATTEMPTS', 500), // requests
-        'decay_minutes' => env('RATE_LIMIT_DECAY_MINUTES', 1), // time window
+        'enabled' => env('RATE_LIMIT_ENABLED'),
+        'max_attempts' => env('RATE_LIMIT_MAX_ATTEMPTS'), // requests
+        'decay_minutes' => env('RATE_LIMIT_DECAY_MINUTES'), // time window
     ],
 
     // Per-route rate limits (override defaults)
