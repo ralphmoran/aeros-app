@@ -24,10 +24,10 @@ return [
 
         // CORS
         'cors' => [
-            'Access-Control-Allow-Origin'      => (isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : $_SERVER['HTTP_HOST']),
+            'Access-Control-Allow-Origin'      => $_SERVER['HTTP_ORIGIN'] ?? '*',
             'Access-Control-Allow-Credentials' => 'true',
-            'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE',
-            'Access-Control-Allow-Headers'     => 'Origin, Authorization, Content-type',
+            'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers'     => 'Origin, Authorization, Content-Type, Accept, X-Requested-With',
             'Access-Control-Max-Age'           => '3600',
         ]
     ],
