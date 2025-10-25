@@ -78,7 +78,7 @@ return [
             'server'   => env("DB_HOST"),
             'username' => env("DB_USERNAME"),
             'password' => env("DB_PASSWORD"),
-            'database' => '',
+            'database' => env("DB_DATABASE"),
             'port'     => env("DB_PORT"),
             'driver'   => env("DB_DRIVER")
         ],
