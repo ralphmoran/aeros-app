@@ -8,8 +8,8 @@
         }
     },
     "require": {
-        "php": "^8.0",
-        "aeros/framework": "^v6.2"
+        "php": "^8.2",
+        "aeros/framework": "*"
     },
     "require-dev": {},
     "license": "MIT",
