@@ -41,6 +41,17 @@ return [
         ],
 
         /*
+         * Queue connection
+         */
+        'queue' => [
+            'server'   => env("REDIS_HOST"),
+            'port'     => env("REDIS_PORT"),
+            'protocol' => env("REDIS_PROTOCOL"),
+            'password' => env("REDIS_PASSWORD"),
+            'driver'   => 'redis'
+        ],
+
+        /*
          * Local connection
          */
         'local' => [
