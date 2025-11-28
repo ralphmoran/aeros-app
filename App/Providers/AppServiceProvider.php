@@ -24,13 +24,13 @@ class AppServiceProvider extends ServiceProvider
         app()->singleton('view', \Aeros\Src\Classes\View::class);
         app()->singleton('component', \Aeros\Src\Classes\Component::class);
         app()->singleton('response', \Aeros\Src\Classes\Response::class);
+        app()->singleton('session', \Aeros\Src\Classes\Session::class);
         app()->singleton('request', \Aeros\Src\Classes\Request::class);
         app()->singleton('redirect', \Aeros\Src\Classes\Redirect::class);
         app()->singleton('event', \Aeros\Src\Classes\Event::class);
         app()->singleton('logger', \Aeros\Src\Classes\Logger::class);
         app()->singleton('file', \Aeros\Src\Classes\File::class);
         app()->singleton('encryptor', \Aeros\Src\Classes\Encryptor::class);
-        app()->singleton('session', \Aeros\Src\Classes\Session::class);
         app()->singleton('cookie', \Aeros\Src\Classes\Cookie::class);
         app()->singleton('worker', \App\Queues\Workers\AppWorker::class);
         app()->singleton('scheduler', \GO\Scheduler::class);
