@@ -8,59 +8,38 @@ use Aeros\Src\Interfaces\MiddlewareInterface;
 
 class VerifyCsrfTokenMiddleware implements MiddlewareInterface
 {
-    /**
-     * Routes exempt from CSRF validation
-     */
-    protected array $except = [];
-
-    public function __construct()
-    {
-        $this->except = config('security.csrf_exempt_routes', []);
-    }
-
     public function __invoke(Request $request, Response $response)
     {
-        // Skip for GET, HEAD, OPTIONS
-        if (in_array(request()->getHttpMethod(), ['GET', 'HEAD', 'OPTIONS'])) {
+        // Skip for non-state-changing methods
+        if (! in_array(request()->getHttpMethod(), ['POST', 'PUT', 'PATCH', 'DELETE'])) {
             return;
         }
 
-        // Skip for exempted routes
-        if ($this->isExempt(request()->getURI())) {
-            return;
+        // Get CSRF token from request body or header
+        $requestToken = request()->csrf_token ?? $this->getTokenFromHeaders();
+
+        if (empty($requestToken)) {
+            abort('403 Forbidden - CSRF token missing');
         }
 
-        // For JSON API: validate Bearer token
-        if (request()->isJson()) {
-            if (! app()->security->validateBearerToken()) {
-                abort('401 Unauthorized - Invalid or missing Bearer token', 401);
-            }
-
-            return;
-        }
-
-        // Validate CSRF token
-        $token = app()->security->getCsrfTokenFromRequest();
-
-        if (! app()->security->validateCsrfToken($token)) {
-            abort('403 Forbidden - CSRF token validation failed');
+        if (! hash_equals((string) session()->csrf_token, $requestToken)) {
+            abort('403 Forbidden - CSRF token mismatch');
         }
     }
 
     /**
-     * Check if current route is exempt from CSRF.
-     *
-     * @param   string  $uri
-     * @return  bool
+     * Get CSRF token from request headers.
      */
-    private function isExempt(string $uri): bool
+    private function getTokenFromHeaders(): ?string
     {
-        foreach ($this->except as $pattern) {
-            if (fnmatch($pattern, $uri)) {
-                return true;
+        $headers = request()->getHeaders();
+
+        foreach ($headers as $header) {
+            if (stripos($header, 'X-CSRF-TOKEN:') === 0) {
+                return trim(substr($header, 13));
             }
         }
 
-        return false;
+        return null;
     }
 }

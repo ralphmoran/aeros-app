@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Aeros\Src\Classes\ServiceProvider;
 
-class AppEventListenersServiceProvider extends ServiceProvider
+class AppEventListenerServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

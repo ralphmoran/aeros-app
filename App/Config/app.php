@@ -106,6 +106,6 @@ return [
         'GenerateAppKeyServiceProvider' => \App\Providers\GenerateAppKeyServiceProvider::class,
         'MimeTypeServiceProvider' => \App\Providers\MimeTypeServiceProvider::class,
         'CacheRoutesServiceProvider' => \App\Providers\CacheRoutesServiceProvider::class,
-        'AppEventListenersServiceProvider' => \App\Providers\AppEventListenersServiceProvider::class,
+        'AppEventListenerServiceProvider' => \App\Providers\AppEventListenerServiceProvider::class,
     ],
 ];

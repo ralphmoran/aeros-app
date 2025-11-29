@@ -27,8 +27,9 @@ return [
             'Access-Control-Allow-Origin'      => $_SERVER['HTTP_ORIGIN'] ?? '*',
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers'     => 'Origin, Authorization, Content-Type, Accept, X-Requested-With',
+            'Access-Control-Allow-Headers'     => 'Origin, Authorization, Content-Type, Accept, X-Requested-With',  // ← MUST include Content-Type
             'Access-Control-Max-Age'           => '3600',
+            'Vary'                             => 'Origin', // ✅ Important for caching
         ]
     ],
 
@@ -48,9 +49,9 @@ return [
         'cookie_name' => env('APP_NAME') . '_phpsessid',
         'lifetime' => 0, // 0: Never expires
         'path' => '/',
-        'domain' => env('HTTP_DOMAIN'),
+        'domain' => '.' . env('HTTP_DOMAIN'),
         'secure' => false,
         'httponly' => true,
-        'samesite' => '', // 'None', 'Strict' or 'Lax'. To use these, it's required to set 'secure' => true (HTTPS)
+        'samesite' => 'lax', // 'None', 'Strict' or 'Lax'. To use these, it's required to set 'secure' => true (HTTPS)
     ],
 ];
