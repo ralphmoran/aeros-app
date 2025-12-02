@@ -29,7 +29,7 @@ return [
             'Access-Control-Allow-Methods'     => 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
             'Access-Control-Allow-Headers'     => 'Origin, Authorization, Content-Type, Accept, X-Requested-With',  // ← MUST include Content-Type
             'Access-Control-Max-Age'           => '3600',
-            'Vary'                             => 'Origin', // ✅ Important for caching
+            'Vary'                             => 'Origin',
         ]
     ],
 
