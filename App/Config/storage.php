@@ -45,7 +45,6 @@ return [
      * File upload configuration
      */
     'files' => [
-
         /*
          * Default upload directory (must be writable)
          */
@@ -73,6 +72,7 @@ return [
             'image/gif' => ['gif'],
             'image/webp' => ['webp'],
             'image/avif' => ['avif'],
+            'image/svg+xml' => ['svg'],
 
             // Documents
             'application/pdf' => ['pdf'],
