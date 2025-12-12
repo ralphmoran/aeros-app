@@ -56,4 +56,26 @@ return [
         '/login' => ['max_attempts' => 5, 'decay_minutes' => 15],
         '/register' => ['max_attempts' => 3, 'decay_minutes' => 60],
     ],
+
+    'dangerous_extensions' => [
+        'php',
+        'phtml',
+        'php3',
+        'php4',
+        'php5',
+        'phps',
+        'phar',
+        'sh',
+        'bash',
+        'exe',
+        'com',
+        'bat',
+        'cmd',
+        'js',
+        'asp',
+        'aspx',
+        'jsp',
+        'cgi',
+        'pl'
+    ]
 ];
