@@ -56,7 +56,6 @@ return [
         // Run over any request
         'app' => [
             'BanBotsMiddleware' => \App\Middlewares\BanBotsMiddleware::class,
-            'VerifyCsrfTokenMiddleware' => \App\Middlewares\VerifyCsrfTokenMiddleware::class,
             'RateLimiterMiddleware' => \App\Middlewares\RateLimiterMiddleware::class,
         ],
 
@@ -69,7 +68,7 @@ return [
         ],
 
         'auth' => [
-
+            'VerifyCsrfTokenMiddleware' => \App\Middlewares\VerifyCsrfTokenMiddleware::class,
         ],
 
         // 'another' => [
