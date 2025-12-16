@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
         app()->singleton('service', \App\Providers\ServiceAgentServiceProvider::class);
         app()->singleton('debugger', \Aeros\Src\Classes\Debugger::class);
         app()->singleton('rateLimiter', \Aeros\Src\Classes\RateLimiter::class);
+        app()->singleton('cors', \App\Providers\CorsWhitelistServiceProvider::class);
 
         // Register objects only for CLI
         if (isMode('cli')) {

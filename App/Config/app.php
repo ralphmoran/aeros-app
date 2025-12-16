@@ -57,6 +57,7 @@ return [
         'app' => [
             'BanBotsMiddleware' => \App\Middlewares\BanBotsMiddleware::class,
             'RateLimiterMiddleware' => \App\Middlewares\RateLimiterMiddleware::class,
+            'CorsValidationMiddleware' => \App\Middlewares\CorsValidationMiddleware::class,
         ],
 
         'web' => [
