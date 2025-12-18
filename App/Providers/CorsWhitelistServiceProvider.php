@@ -17,7 +17,7 @@ class CorsWhitelistServiceProvider extends ServiceProvider
      */
     public function getAllowedOrigins(): array
     {
-        $cached = cache('queue')->get(env('CACHE_KEY'));
+        $cached = cache('redis')->get(env('CACHE_KEY'));
 
         if ($cached !== null) {
             return json_decode($cached, true) ?: [];
@@ -41,7 +41,7 @@ class CorsWhitelistServiceProvider extends ServiceProvider
      */
     public function setAllowedOrigins(array $origins): bool
     {
-        cache('queue')->set(
+        cache('redis')->set(
             env('CACHE_KEY'),
             json_encode(array_values($origins)),
             'ex',
@@ -120,7 +120,7 @@ class CorsWhitelistServiceProvider extends ServiceProvider
     }
 
     /**
-     * Check if origin matches pattern (supports wildcards).
+     * Check if origin matches pattern (supports wildcards for domains and IPs).
      *
      * @param string $origin
      * @param string $pattern
@@ -140,20 +140,38 @@ class CorsWhitelistServiceProvider extends ServiceProvider
     }
 
     /**
-     * Validate origin format.
+     * Validate origin format (supports domains and IPs with ports).
      *
      * @param string $origin
      * @return bool
+     * @example
+     * <code>
+     * <?php
+     *   Valid patterns:
+     *  - domain.com
+     *  - *.domain.com (wildcard)
+     *  - 127.0.0.1
+     *  - 192.168.1.* (IP wildcard)
+     *  - Any of above with :port
+     * ?>
+     * </code>
      */
     private function isValidOrigin(string $origin): bool
     {
         // Must start with http:// or https://
-        if (! preg_match('/^https?:\/\/.+/', $origin)) {
+        if (!preg_match('/^https?:\/\/.+/', $origin)) {
             return false;
         }
 
         // Must not end with /
         if (substr($origin, -1) === '/') {
+            return false;
+        }
+
+        // Extract the host part (after protocol, before path)
+        $parsed = parse_url($origin);
+
+        if (!isset($parsed['host'])) {
             return false;
         }
 
